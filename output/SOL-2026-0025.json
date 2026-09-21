@@ -1,0 +1,156 @@
+{
+  "solicitud_id": "SOL-2026-0025",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Asociación Limpiezas de Prueba – AF-0020",
+    "sent_at": "Mon, 14 Sep 2026 19:36:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Asociación Limpiezas de Prueba",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0020",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Eric Gómez",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "eric.gomez50@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0025",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Asociación Limpiezas de Prueba",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "G72269194",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Eric Gómez Castro",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "eric.gomez50@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 046",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "presencial",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 3,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "11/11/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0020",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Igualdad en la empresa",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "87907660G",
+        "nombre": "Alba Suárez Marín",
+        "categoria": "Administrativo/a",
+        "horas": 20
+      },
+      {
+        "dni": "11318848L",
+        "nombre": "Gael Blanco Martínez",
+        "categoria": "Auxiliar",
+        "horas": 20
+      },
+      {
+        "dni": "87666130C",
+        "nombre": "Bruno Romero Lozano",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "87907660G",
+        "nombre": "Alba Suárez Marín",
+        "categoria": "Administrativo/a",
+        "horas": 20
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "pdf_worker_count_mismatch",
+      "severity": "blocking",
+      "message": "El PDF declara 3 trabajadores y el listado contiene 4."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF declara 3 trabajadores y el listado contiene 4."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0025 – en revisión",
+    "body": "Hola Eric Gómez Castro,\n\nHemos recibido la solicitud de Asociación Limpiezas de Prueba para AF-0020. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF declara 3 trabajadores y el listado contiene 4.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

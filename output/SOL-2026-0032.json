@@ -1,0 +1,158 @@
+{
+  "solicitud_id": "SOL-2026-0032",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Asociación Panadería Ejemplo – AF-0015",
+    "sent_at": "Mon, 14 Sep 2026 09:37:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Asociación Panadería Ejemplo",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "G87077483",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0015",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Pablo Ruiz",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "pablo.ruiz75@example.org",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": {
+        "value": 3,
+        "source": "email",
+        "location": "body"
+      }
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0032",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Asociación Panadería Ejemplo",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "G87077483",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Pablo Ruiz Gutiérrez",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "pablo.ruiz75@example.org",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 048",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "mixta",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 3,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "01/11/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0015",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Protección de datos (RGPD) aplicada",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "14671975E",
+        "nombre": "Leo Muñoz Pérez",
+        "categoria": "Responsable de equipo",
+        "horas": 60
+      },
+      {
+        "dni": "41910942C",
+        "nombre": "Luca García Álvarez",
+        "categoria": "Encargado/a",
+        "horas": 30
+      },
+      {
+        "dni": "51867913S",
+        "nombre": "Álvaro Serrano Gómez",
+        "categoria": "Operario/a",
+        "horas": 30
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "company_not_registered",
+      "severity": "blocking",
+      "message": "La empresa no está registrada en el sistema."
+    }
+  ],
+  "decision": {
+    "status": "deny",
+    "reasons": [
+      "La empresa no está registrada en el sistema."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0032 – no aprobada",
+    "body": "Hola Pablo Ruiz Gutiérrez,\n\nNo es posible tramitar la solicitud de Asociación Panadería Ejemplo para AF-0015 por los siguientes motivos:\n- La empresa no está registrada en el sistema.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

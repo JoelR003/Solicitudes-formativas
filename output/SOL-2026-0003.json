@@ -1,0 +1,176 @@
+{
+  "solicitud_id": "SOL-2026-0003",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Óptica Central SL – AF-0001",
+    "sent_at": "Mon, 14 Sep 2026 11:18:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Óptica Central SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "B27041177",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0001",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Irene Suárez",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "irene.suarez87@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": {
+        "value": 6,
+        "source": "email",
+        "location": "body"
+      }
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0003",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Óptica Central SL",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B27041177",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Irene Suárez Navarro",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "irene.suarez87@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 027",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "mixta",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 6,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "08/11/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0001",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Ofimática avanzada con IA",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "83079700W",
+        "nombre": "Martina Moreno Gómez",
+        "categoria": "Operario/a",
+        "horas": 20
+      },
+      {
+        "dni": "89180518L",
+        "nombre": "Álvaro Marín Ortiz",
+        "categoria": "Operario/a",
+        "horas": 40
+      },
+      {
+        "dni": "37002566X",
+        "nombre": "Izan Sanz Cortés",
+        "categoria": "Técnico/a",
+        "horas": 40
+      },
+      {
+        "dni": "22366364Z",
+        "nombre": "Gael Muñoz Marín",
+        "categoria": "Auxiliar",
+        "horas": 40
+      },
+      {
+        "dni": "57822199S",
+        "nombre": "Aitana Ramos García",
+        "categoria": "Operario/a",
+        "horas": 20
+      },
+      {
+        "dni": "67046849D",
+        "nombre": "Bruno Garrido Domínguez",
+        "categoria": "Encargado/a",
+        "horas": 40
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "invalid_worker_dni",
+      "severity": "blocking",
+      "message": "Hay DNI con letra de control incorrecta: 83079700W, 37002566X."
+    }
+  ],
+  "decision": {
+    "status": "request_documents",
+    "reasons": [
+      "Hay DNI con letra de control incorrecta: 83079700W, 37002566X."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0003 – documentación pendiente",
+    "body": "Hola Irene Suárez Navarro,\n\nHemos recibido la solicitud de Óptica Central SL para AF-0001. Para poder tramitarla necesitamos la siguiente documentación:\n- Hay DNI con letra de control incorrecta: 83079700W, 37002566X.\n\nCuando la recibamos, continuaremos con la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

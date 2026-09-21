@@ -1,0 +1,166 @@
+{
+  "solicitud_id": "SOL-2026-0002",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Asesoría del Valle SA – AF-0017",
+    "sent_at": "Tue, 15 Sep 2026 18:17:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Asesoría del Valle SA",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "A60363264",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0017",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Carla Fernández",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "carla.fernandez47@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0002",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "15/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Asesoría del Valle SA",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "A60363264",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Carla Fernández Sánchez",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "carla.fernandez47@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 003",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 7,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "09/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0017",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Gestión del tiempo",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "56103735L",
+        "nombre": "Julia Gutiérrez Iglesias",
+        "categoria": "Encargado/a",
+        "horas": 20
+      },
+      {
+        "dni": "85302335G",
+        "nombre": "Irene Vázquez Marín",
+        "categoria": "Auxiliar",
+        "horas": 40
+      },
+      {
+        "dni": "14070552A",
+        "nombre": "Bruno Gutiérrez Marín",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "89929902V",
+        "nombre": "Gael García Molina",
+        "categoria": "Auxiliar",
+        "horas": 30
+      },
+      {
+        "dni": "75484652D",
+        "nombre": "Rodrigo Martínez García",
+        "categoria": "Responsable de equipo",
+        "horas": 60
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "pdf_worker_count_mismatch",
+      "severity": "blocking",
+      "message": "El PDF declara 7 trabajadores y el listado contiene 5."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF declara 7 trabajadores y el listado contiene 5."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0002 – en revisión",
+    "body": "Hola Carla Fernández Sánchez,\n\nHemos recibido la solicitud de Asesoría del Valle SA para AF-0017. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF declara 7 trabajadores y el listado contiene 5.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

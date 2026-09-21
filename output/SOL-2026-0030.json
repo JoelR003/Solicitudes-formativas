@@ -1,0 +1,144 @@
+{
+  "solicitud_id": "SOL-2026-0030",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Limpiezas de la Vega SL – AF-0016",
+    "sent_at": "Mon, 14 Sep 2026 09:47:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Limpiezas de la Vega SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0016",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Chloe Ruiz",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "chloe.ruiz6@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0030",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Limpiezas de la Vega SL",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B84862705",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Chloe Ruiz Vázquez",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "chloe.ruiz6@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 042",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "presencial",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 2,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "por determinar",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0016",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Curso de cocina italiana",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "41586128N",
+        "nombre": "Noa Garrido Martínez",
+        "categoria": "Comercial",
+        "horas": 40
+      },
+      {
+        "dni": "98912015D",
+        "nombre": "Mateo López Morales",
+        "categoria": "Técnico/a",
+        "horas": 60
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "action_not_found",
+      "severity": "blocking",
+      "message": "La acción formativa no existe en el sistema."
+    }
+  ],
+  "decision": {
+    "status": "deny",
+    "reasons": [
+      "La acción formativa no existe en el sistema."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0030 – no aprobada",
+    "body": "Hola Chloe Ruiz Vázquez,\n\nNo es posible tramitar la solicitud de Limpiezas de la Vega SL para AF-0016 por los siguientes motivos:\n- La acción formativa no existe en el sistema.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

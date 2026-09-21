@@ -1,0 +1,182 @@
+{
+  "solicitud_id": "SOL-2026-0007",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Transportes Ficticia SA – AF-0012",
+    "sent_at": "Tue, 15 Sep 2026 13:25:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Transportes Ficticia SA",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "A68258011",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0012",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Vera Ortiz",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "vera.ortiz38@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": {
+        "value": 7,
+        "source": "email",
+        "location": "body"
+      }
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0007",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "15/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Transportes Ficticia SA",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "A68258011",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Vera Ortiz Alonso",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "vera.ortiz38@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 031",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 7,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "15/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0012",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Power BI inicial",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "96294669V",
+        "nombre": "Lucía Medina Castro",
+        "categoria": "Administrativo/a",
+        "horas": 60
+      },
+      {
+        "dni": "55918129M",
+        "nombre": "Jimena Serrano Lozano",
+        "categoria": "Encargado/a",
+        "horas": 30
+      },
+      {
+        "dni": "30518509Q",
+        "nombre": "Chloe Domínguez Garrido",
+        "categoria": "Responsable de equipo",
+        "horas": 30
+      },
+      {
+        "dni": "40018785G",
+        "nombre": "Mateo Romero Gómez",
+        "categoria": "Operario/a",
+        "horas": 30
+      },
+      {
+        "dni": "34566610W",
+        "nombre": "Irene Díaz Ortega",
+        "categoria": "Técnico/a",
+        "horas": 60
+      },
+      {
+        "dni": "10307801B",
+        "nombre": "Aitana Marín Díaz",
+        "categoria": "Auxiliar",
+        "horas": 60
+      },
+      {
+        "dni": "15224888S",
+        "nombre": "Chloe Marín Blanco",
+        "categoria": "Operario/a",
+        "horas": 20
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "invalid_worker_dni",
+      "severity": "blocking",
+      "message": "Hay DNI con letra de control incorrecta: 55918129M, 10307801B."
+    }
+  ],
+  "decision": {
+    "status": "request_documents",
+    "reasons": [
+      "Hay DNI con letra de control incorrecta: 55918129M, 10307801B."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0007 – documentación pendiente",
+    "body": "Hola Vera Ortiz Alonso,\n\nHemos recibido la solicitud de Transportes Ficticia SA para AF-0012. Para poder tramitarla necesitamos la siguiente documentación:\n- Hay DNI con letra de control incorrecta: 55918129M, 10307801B.\n\nCuando la recibamos, continuaremos con la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

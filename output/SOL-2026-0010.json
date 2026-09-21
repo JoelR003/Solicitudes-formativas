@@ -1,0 +1,183 @@
+{
+  "solicitud_id": "SOL-2026-0010",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Consultoría de Prueba SA – AF-0030",
+    "sent_at": "Tue, 15 Sep 2026 15:28:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Consultoría de Prueba SA",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "A14853287",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0030",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Carla Martínez",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "carla.martinez62@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0010",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "15/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Consultoría de Prueba SA",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "A14853287",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Carla Martínez Vázquez",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "carla.martinez62@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 022",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "mixta",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 6,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "18/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0030",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Auxiliar de comercio",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "95390428K",
+        "nombre": "Luca Vázquez Sanz",
+        "categoria": "Auxiliar",
+        "horas": 40
+      },
+      {
+        "dni": "51636866A",
+        "nombre": "Chloe Romero García",
+        "categoria": "Comercial",
+        "horas": 30
+      },
+      {
+        "dni": "30468007E",
+        "nombre": "Bruno Ruiz Lozano",
+        "categoria": "Responsable de equipo",
+        "horas": 20
+      },
+      {
+        "dni": "39576118H",
+        "nombre": "Irene Domínguez Pérez",
+        "categoria": "Técnico/a",
+        "horas": 40
+      },
+      {
+        "dni": "51737562M",
+        "nombre": "Pablo Iglesias Castro",
+        "categoria": "Comercial",
+        "horas": 30
+      },
+      {
+        "dni": "86210882M",
+        "nombre": "Noa Serrano Lozano",
+        "categoria": "Encargado/a",
+        "horas": 30
+      }
+    ]
+  },
+  "validations": [],
+  "decision": {
+    "status": "approve",
+    "reasons": [
+      "La solicitud supera todas las comprobaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0010 – aprobada",
+    "body": "Hola Carla Martínez Vázquez,\n\nHemos aprobado la solicitud de Consultoría de Prueba SA para AF-0030. La inscripción incluye 6 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "simulated",
+    "result": {
+      "ok": true,
+      "simulado": true,
+      "registro": {
+        "cif": "A14853287",
+        "accion": "AF-0030",
+        "trabajadores": [
+          "95390428K",
+          "51636866A",
+          "30468007E",
+          "39576118H",
+          "51737562M",
+          "86210882M"
+        ],
+        "fecha": "2026-09-20",
+        "origen": "tramitacion_automatica"
+      }
+    }
+  }
+}

@@ -1,0 +1,156 @@
+{
+  "solicitud_id": "SOL-2026-0033",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Consultoría Meridional SL – AF-0020",
+    "sent_at": "Mon, 14 Sep 2026 17:28:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Consultoría Meridional SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0020",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Adrián Navarro",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "adrian.navarro31@example.org",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0033",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Consultoría Meridional SL",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B52836890",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Adrián Navarro Ortega",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "adrian.navarro31@example.org",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 028",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "presencial",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 4,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "11/11/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0020",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Igualdad en la empresa",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "36832334L",
+        "nombre": "Jimena Gómez Fernández",
+        "categoria": "Responsable de equipo",
+        "horas": 20
+      },
+      {
+        "dni": "34166925B",
+        "nombre": "Nicolás López Romero",
+        "categoria": "Comercial",
+        "horas": 60
+      },
+      {
+        "dni": "88007581J",
+        "nombre": "Diego Cortés Martínez",
+        "categoria": "Responsable de equipo",
+        "horas": 20
+      },
+      {
+        "dni": "42279404E",
+        "nombre": "Eric Torres Molina",
+        "categoria": "Técnico/a",
+        "horas": 20
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "company_not_registered",
+      "severity": "blocking",
+      "message": "La empresa no está registrada en el sistema."
+    }
+  ],
+  "decision": {
+    "status": "deny",
+    "reasons": [
+      "La empresa no está registrada en el sistema."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0033 – no aprobada",
+    "body": "Hola Adrián Navarro Ortega,\n\nNo es posible tramitar la solicitud de Consultoría Meridional SL para AF-0020 por los siguientes motivos:\n- La empresa no está registrada en el sistema.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

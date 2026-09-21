@@ -1,0 +1,166 @@
+{
+  "solicitud_id": "SOL-2026-0004",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Clínica Atlántica SL – AF-0005",
+    "sent_at": "Tue, 15 Sep 2026 00:50:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Clínica Atlántica SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "B99193559",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0005",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Alba Alonso",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "alba.alonso75@example.org",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": {
+        "value": 3,
+        "source": "email",
+        "location": "body"
+      }
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0004",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "15/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Clínica Atlántica SL",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B99193559",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Alba Alonso Navarro",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "alba.alonso75@example.org",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 039",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 3,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "30/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0005",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Gestión de proyectos con metodologías ágiles",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "61016307K",
+        "nombre": "Noa Navarro Serrano",
+        "categoria": "Operario/a",
+        "horas": 60
+      },
+      {
+        "dni": "79496785E",
+        "nombre": "Aitana Molina Delgado",
+        "categoria": "Técnico/a",
+        "horas": 20
+      },
+      {
+        "dni": "90797488C",
+        "nombre": "Sofía Ortiz Morales",
+        "categoria": "Auxiliar",
+        "horas": 60
+      }
+    ]
+  },
+  "validations": [],
+  "decision": {
+    "status": "approve",
+    "reasons": [
+      "La solicitud supera todas las comprobaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0004 – aprobada",
+    "body": "Hola Alba Alonso Navarro,\n\nHemos aprobado la solicitud de Clínica Atlántica SL para AF-0005. La inscripción incluye 3 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "simulated",
+    "result": {
+      "ok": true,
+      "simulado": true,
+      "registro": {
+        "cif": "B99193559",
+        "accion": "AF-0005",
+        "trabajadores": [
+          "61016307K",
+          "79496785E",
+          "90797488C"
+        ],
+        "fecha": "2026-09-20",
+        "origen": "tramitacion_automatica"
+      }
+    }
+  }
+}

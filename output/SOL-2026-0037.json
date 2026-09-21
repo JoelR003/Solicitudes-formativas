@@ -1,0 +1,172 @@
+{
+  "solicitud_id": "SOL-2026-0037",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Asociación Instalaciones del Sur – AF-0004",
+    "sent_at": "Mon, 14 Sep 2026 20:18:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Asociación Instalaciones del Sur",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0004",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Gael Suárez",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "gael.suarez3@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0037",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Asociación Instalaciones del Sur",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "G13837372",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Gael Suárez Molina",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "gael.suarez3@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 032",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "mixta",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 5,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "23/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0004",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Inglés B1 para el trabajo",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "61748214E",
+        "nombre": "Daniel Castillo Díaz",
+        "categoria": "Comercial",
+        "horas": 30
+      },
+      {
+        "dni": "60749830E",
+        "nombre": "Irene Álvarez Lozano",
+        "categoria": "Responsable de equipo",
+        "horas": 60
+      },
+      {
+        "dni": "71995554B",
+        "nombre": "Bruno Ramos Blanco",
+        "categoria": "Encargado/a",
+        "horas": 30
+      },
+      {
+        "dni": "11400918W",
+        "nombre": "Thiago Moreno Castillo",
+        "categoria": "Administrativo/a",
+        "horas": 20
+      },
+      {
+        "dni": "48345255Z",
+        "nombre": "Martina Ruiz Iglesias",
+        "categoria": "Operario/a",
+        "horas": 20
+      }
+    ]
+  },
+  "validations": [],
+  "decision": {
+    "status": "approve",
+    "reasons": [
+      "La solicitud supera todas las comprobaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0037 – aprobada",
+    "body": "Hola Gael Suárez Molina,\n\nHemos aprobado la solicitud de Asociación Instalaciones del Sur para AF-0004. La inscripción incluye 5 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "simulated",
+    "result": {
+      "ok": true,
+      "simulado": true,
+      "registro": {
+        "cif": "G13837372",
+        "accion": "AF-0004",
+        "trabajadores": [
+          "61748214E",
+          "60749830E",
+          "71995554B",
+          "11400918W",
+          "48345255Z"
+        ],
+        "fecha": "2026-09-20",
+        "origen": "tramitacion_automatica"
+      }
+    }
+  }
+}

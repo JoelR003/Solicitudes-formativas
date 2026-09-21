@@ -1,0 +1,107 @@
+{
+  "solicitud_id": "SOL-2026-0021",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Asociación Imprenta Central – AF-0020",
+    "sent_at": "Tue, 15 Sep 2026 00:48:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Asociación Imprenta Central",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0020",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Daniel Vázquez",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "daniel.vazquez86@example.org",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "scanned",
+    "file": "solicitud.pdf",
+    "fields": {}
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "66812240T",
+        "nombre": "Diego Muñoz Gutiérrez",
+        "categoria": "Auxiliar",
+        "horas": 30
+      },
+      {
+        "dni": "95179877N",
+        "nombre": "Mateo Molina Alonso",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "72525303R",
+        "nombre": "Jimena Álvarez López",
+        "categoria": "Comercial",
+        "horas": 20
+      },
+      {
+        "dni": "74235839G",
+        "nombre": "Valeria Gutiérrez López",
+        "categoria": "Operario/a",
+        "horas": 60
+      },
+      {
+        "dni": "44248830G",
+        "nombre": "Marcos Muñoz Núñez",
+        "categoria": "Auxiliar",
+        "horas": 40
+      },
+      {
+        "dni": "45879376B",
+        "nombre": "Lola Pérez Gil",
+        "categoria": "Auxiliar",
+        "horas": 60
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "pdf_scanned",
+      "severity": "warning",
+      "message": "El PDF está escaneado y no se ha podido comparar."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF está escaneado y no se ha podido comparar."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0021 – en revisión",
+    "body": "Hola Daniel Vázquez,\n\nHemos recibido la solicitud de Asociación Imprenta Central para AF-0020. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF está escaneado y no se ha podido comparar.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

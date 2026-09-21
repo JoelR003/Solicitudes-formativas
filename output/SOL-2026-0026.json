@@ -1,0 +1,152 @@
+{
+  "solicitud_id": "SOL-2026-0026",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Autoescuela Imaginaria SA – AF-0019",
+    "sent_at": "Tue, 15 Sep 2026 22:09:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Autoescuela Imaginaria SA",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "A55103493",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0019",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Aitana Ortega",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "aitana.ortega17@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": {
+        "value": 2,
+        "source": "email",
+        "location": "body"
+      }
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0026",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "15/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Autoescuela Imaginaria SA",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "A55103493",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Aitana Ortega Iglesias",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "aitana.ortega17@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 002",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "presencial",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 2,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "31/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0019",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Automatización de tareas con IA generativa",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "11784267X",
+        "nombre": "Paula Alonso Iglesias",
+        "categoria": "Responsable de equipo",
+        "horas": 30
+      },
+      {
+        "dni": "44763678C",
+        "nombre": "Luca Castro Pérez",
+        "categoria": "Técnico/a",
+        "horas": 30
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "company_not_current",
+      "severity": "blocking",
+      "message": "La empresa no está al corriente de obligaciones."
+    }
+  ],
+  "decision": {
+    "status": "deny",
+    "reasons": [
+      "La empresa no está al corriente de obligaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0026 – no aprobada",
+    "body": "Hola Aitana Ortega Iglesias,\n\nNo es posible tramitar la solicitud de Autoescuela Imaginaria SA para AF-0019 por los siguientes motivos:\n- La empresa no está al corriente de obligaciones.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

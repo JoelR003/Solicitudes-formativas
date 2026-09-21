@@ -1,0 +1,178 @@
+{
+  "solicitud_id": "SOL-2026-0001",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Carpintería Imaginaria SA – AF-0008",
+    "sent_at": "Mon, 14 Sep 2026 09:00:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Carpintería Imaginaria SA",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "G32364358",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0008",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Leo Vázquez",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "leo.vazquez39@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0001",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Carpintería Imaginaria SA",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "A15413040",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Leo Vázquez Molina",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "leo.vazquez39@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 012",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 7,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "21/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0008",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Liderazgo de equipos",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "10606068D",
+        "nombre": "Bruno Martínez Ortega",
+        "categoria": "Operario/a",
+        "horas": 40
+      },
+      {
+        "dni": "21691282M",
+        "nombre": "Izan Fernández Sánchez",
+        "categoria": "Encargado/a",
+        "horas": 60
+      },
+      {
+        "dni": "61246484Z",
+        "nombre": "Abril Iglesias Molina",
+        "categoria": "Auxiliar",
+        "horas": 60
+      },
+      {
+        "dni": "69920367E",
+        "nombre": "Sofía Fernández Muñoz",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "66738429L",
+        "nombre": "Vera Álvarez Gutiérrez",
+        "categoria": "Responsable de equipo",
+        "horas": 20
+      },
+      {
+        "dni": "92957591D",
+        "nombre": "Leo Díaz García",
+        "categoria": "Encargado/a",
+        "horas": 30
+      },
+      {
+        "dni": "13201265R",
+        "nombre": "Abril Alonso Serrano",
+        "categoria": "Operario/a",
+        "horas": 30
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "email_pdf_cif_mismatch",
+      "severity": "blocking",
+      "message": "cif no coincide entre el correo y el PDF."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "cif no coincide entre el correo y el PDF."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0001 – en revisión",
+    "body": "Hola Leo Vázquez Molina,\n\nHemos recibido la solicitud de Carpintería Imaginaria SA para AF-0008. Hemos detectado una incidencia que requiere revisión manual:\n- cif no coincide entre el correo y el PDF.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

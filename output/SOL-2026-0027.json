@@ -1,0 +1,93 @@
+{
+  "solicitud_id": "SOL-2026-0027",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Farmacia Levante SLU – AF-0004",
+    "sent_at": "Mon, 14 Sep 2026 21:02:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Farmacia Levante SLU",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "B71786073",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0004",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Bruno Muñoz",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "bruno.munoz40@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "scanned",
+    "file": "solicitud.pdf",
+    "fields": {}
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "29565039B",
+        "nombre": "Martina Gutiérrez Iglesias",
+        "categoria": "Administrativo/a",
+        "horas": 40
+      },
+      {
+        "dni": "32538816A",
+        "nombre": "Julia Fernández Molina",
+        "categoria": "Responsable de equipo",
+        "horas": 30
+      },
+      {
+        "dni": "35953807T",
+        "nombre": "Alba Delgado Iglesias",
+        "categoria": "Administrativo/a",
+        "horas": 40
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "pdf_scanned",
+      "severity": "warning",
+      "message": "El PDF está escaneado y no se ha podido comparar."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF está escaneado y no se ha podido comparar."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0027 – en revisión",
+    "body": "Hola Bruno Muñoz,\n\nHemos recibido la solicitud de Farmacia Levante SLU para AF-0004. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF está escaneado y no se ha podido comparar.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

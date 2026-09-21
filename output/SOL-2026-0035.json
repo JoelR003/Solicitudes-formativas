@@ -1,0 +1,162 @@
+{
+  "solicitud_id": "SOL-2026-0035",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Transportes Modelo SA – AF-0031",
+    "sent_at": "Mon, 14 Sep 2026 16:47:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Transportes Modelo SA",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0031",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Nicolás Rubio",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "nicolas.rubio36@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0035",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Transportes Modelo SA",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "A74537515",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Nicolás Rubio Ortega",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "nicolas.rubio36@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 007",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "mixta",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 5,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "07/11/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0031",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Primeros auxilios en el trabajo",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "60204754T",
+        "nombre": "Abril López Moreno",
+        "categoria": "Técnico/a",
+        "horas": 30
+      },
+      {
+        "dni": "38452623G",
+        "nombre": "Nicolás Gómez Serrano",
+        "categoria": "Auxiliar",
+        "horas": 40
+      },
+      {
+        "dni": "20698859D",
+        "nombre": "Iker Sánchez Ramos",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "42255391K",
+        "nombre": "Adrián Domínguez Iglesias",
+        "categoria": "Operario/a",
+        "horas": 60
+      },
+      {
+        "dni": "27409342N",
+        "nombre": "Aitana Molina Morales",
+        "categoria": "Auxiliar",
+        "horas": 30
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "action_not_open",
+      "severity": "blocking",
+      "message": "La acción formativa no admite inscripciones."
+    }
+  ],
+  "decision": {
+    "status": "deny",
+    "reasons": [
+      "La acción formativa no admite inscripciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0035 – no aprobada",
+    "body": "Hola Nicolás Rubio Ortega,\n\nNo es posible tramitar la solicitud de Transportes Modelo SA para AF-0031 por los siguientes motivos:\n- La acción formativa no admite inscripciones.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "solicitud_id": "SOL-2026-0006",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Ferretería Meridional SLU – AF-0026",
+    "sent_at": "Tue, 15 Sep 2026 15:28:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Ferretería Meridional SLU",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0026",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Martina Alonso",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "martina.alonso86@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0006",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "15/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Ferretería Meridional SLU",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B44194116",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Martina Alonso Marín",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "martina.alonso86@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 034",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 5,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "01/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0026",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Negociación",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "28710985Q",
+        "nombre": "Candela Delgado Ortega",
+        "categoria": "Técnico/a",
+        "horas": 60
+      },
+      {
+        "dni": "36883327K",
+        "nombre": "Enzo Marín Sanz",
+        "categoria": "Encargado/a",
+        "horas": 20
+      },
+      {
+        "dni": "96707426Q",
+        "nombre": "Olivia Serrano Romero",
+        "categoria": "Responsable de equipo",
+        "horas": 20
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "pdf_worker_count_mismatch",
+      "severity": "blocking",
+      "message": "El PDF declara 5 trabajadores y el listado contiene 3."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF declara 5 trabajadores y el listado contiene 3."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0006 – en revisión",
+    "body": "Hola Martina Alonso Marín,\n\nHemos recibido la solicitud de Ferretería Meridional SLU para AF-0026. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF declara 5 trabajadores y el listado contiene 3.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "solicitud_id": "SOL-2026-0024",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Talleres del Sur SA – AF-0005",
+    "sent_at": "Mon, 14 Sep 2026 20:24:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Talleres del Sur SA",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0005",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Daniel Ruiz",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "daniel.ruiz79@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0024",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Talleres del Sur SA",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "A27289545",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Daniel Ruiz Rubio",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "daniel.ruiz79@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 029",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 2,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "30/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0005",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Gestión de proyectos con metodologías ágiles",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "35858556S",
+        "nombre": "Álvaro Cortés Moreno",
+        "categoria": "Técnico/a",
+        "horas": 40
+      },
+      {
+        "dni": "98763800Y",
+        "nombre": "Álvaro Romero Moreno",
+        "categoria": "Administrativo/a",
+        "horas": 60
+      }
+    ]
+  },
+  "validations": [],
+  "decision": {
+    "status": "approve",
+    "reasons": [
+      "La solicitud supera todas las comprobaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0024 – aprobada",
+    "body": "Hola Daniel Ruiz Rubio,\n\nHemos aprobado la solicitud de Talleres del Sur SA para AF-0005. La inscripción incluye 2 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "simulated",
+    "result": {
+      "ok": true,
+      "simulado": true,
+      "registro": {
+        "cif": "A27289545",
+        "accion": "AF-0005",
+        "trabajadores": [
+          "35858556S",
+          "98763800Y"
+        ],
+        "fecha": "2026-09-20",
+        "origen": "tramitacion_automatica"
+      }
+    }
+  }
+}

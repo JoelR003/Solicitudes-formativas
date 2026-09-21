@@ -1,0 +1,78 @@
+{
+  "solicitud_id": "SOL-2026-0005",
+  "files": [
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Farmacia del Sur SL – AF-0013",
+    "sent_at": "Mon, 14 Sep 2026 17:55:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Farmacia del Sur SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": {
+        "value": "B50790963",
+        "source": "email",
+        "location": "body"
+      },
+      "accion": {
+        "value": "AF-0013",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Candela García",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "candela.garcia13@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "scanned",
+    "file": "solicitud.pdf",
+    "fields": {}
+  },
+  "worker_list": {
+    "status": "missing",
+    "source": null,
+    "file": null,
+    "workers": []
+  },
+  "validations": [
+    {
+      "code": "pdf_scanned",
+      "severity": "warning",
+      "message": "El PDF está escaneado y no se ha podido comparar."
+    },
+    {
+      "code": "worker_list_missing",
+      "severity": "blocking",
+      "message": "No se adjuntó un listado de trabajadores."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF está escaneado y no se ha podido comparar."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0005 – en revisión",
+    "body": "Hola Candela García,\n\nHemos recibido la solicitud de Farmacia del Sur SL para AF-0013. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF está escaneado y no se ha podido comparar.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

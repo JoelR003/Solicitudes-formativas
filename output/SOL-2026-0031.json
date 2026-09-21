@@ -1,0 +1,158 @@
+{
+  "solicitud_id": "SOL-2026-0031",
+  "files": [
+    "listado_trabajadores.docx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Jardinería de la Vega SL – AF-0008",
+    "sent_at": "Mon, 14 Sep 2026 17:35:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Jardinería de la Vega SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0008",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Pablo Domínguez",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "pablo.dominguez89@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0031",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Jardinería de la Vega SL",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B94543469",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Pablo Domínguez Molina",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "pablo.dominguez89@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 018",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 3,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "21/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0008",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Liderazgo de equipos",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "word",
+    "file": "listado_trabajadores.docx",
+    "workers": [
+      {
+        "dni": "87069055W",
+        "nombre": "Adrián Cortés Torres",
+        "categoria": "Encargado/a",
+        "horas": 20
+      },
+      {
+        "dni": "42620354C",
+        "nombre": "Pablo Morales Cortés",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "35019575M",
+        "nombre": "Aitana Serrano Ramos",
+        "categoria": "Técnico/a",
+        "horas": 30
+      }
+    ]
+  },
+  "validations": [],
+  "decision": {
+    "status": "approve",
+    "reasons": [
+      "La solicitud supera todas las comprobaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0031 – aprobada",
+    "body": "Hola Pablo Domínguez Molina,\n\nHemos aprobado la solicitud de Jardinería de la Vega SL para AF-0008. La inscripción incluye 3 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "simulated",
+    "result": {
+      "ok": true,
+      "simulado": true,
+      "registro": {
+        "cif": "B94543469",
+        "accion": "AF-0008",
+        "trabajadores": [
+          "87069055W",
+          "42620354C",
+          "35019575M"
+        ],
+        "fecha": "2026-09-20",
+        "origen": "tramitacion_automatica"
+      }
+    }
+  }
+}

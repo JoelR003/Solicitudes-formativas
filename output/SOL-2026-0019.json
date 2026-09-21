@@ -1,0 +1,172 @@
+{
+  "solicitud_id": "SOL-2026-0019",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Academia Ficticia SL – AF-0019",
+    "sent_at": "Mon, 14 Sep 2026 13:13:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Academia Ficticia SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0019",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Alba Romero",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "alba.romero85@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0019",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Academia Ficticia SL",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B91430355",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Alba Romero Serrano",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "alba.romero85@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 008",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "presencial",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 5,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "31/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0019",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Automatización de tareas con IA generativa",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "78632588G",
+        "nombre": "Gael Moreno Ramos",
+        "categoria": "Responsable de equipo",
+        "horas": 20
+      },
+      {
+        "dni": "29958771Y",
+        "nombre": "Thiago Ortiz Morales",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "44024988K",
+        "nombre": "Thiago Pérez Gil",
+        "categoria": "Comercial",
+        "horas": 30
+      },
+      {
+        "dni": "44470028B",
+        "nombre": "Eric Delgado García",
+        "categoria": "Responsable de equipo",
+        "horas": 30
+      },
+      {
+        "dni": "88341022T",
+        "nombre": "Sofía Medina Ramos",
+        "categoria": "Operario/a",
+        "horas": 60
+      }
+    ]
+  },
+  "validations": [],
+  "decision": {
+    "status": "approve",
+    "reasons": [
+      "La solicitud supera todas las comprobaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0019 – aprobada",
+    "body": "Hola Alba Romero Serrano,\n\nHemos aprobado la solicitud de Academia Ficticia SL para AF-0019. La inscripción incluye 5 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "simulated",
+    "result": {
+      "ok": true,
+      "simulado": true,
+      "registro": {
+        "cif": "B91430355",
+        "accion": "AF-0019",
+        "trabajadores": [
+          "78632588G",
+          "29958771Y",
+          "44024988K",
+          "44470028B",
+          "88341022T"
+        ],
+        "fecha": "2026-09-20",
+        "origen": "tramitacion_automatica"
+      }
+    }
+  }
+}

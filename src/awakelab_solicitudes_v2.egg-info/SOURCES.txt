@@ -1,0 +1,9 @@
+pyproject.toml
+src/awakelab-solicitudes/__init__.py
+src/awakelab-solicitudes/extract.py
+src/awakelab_solicitudes_v2.egg-info/PKG-INFO
+src/awakelab_solicitudes_v2.egg-info/SOURCES.txt
+src/awakelab_solicitudes_v2.egg-info/dependency_links.txt
+src/awakelab_solicitudes_v2.egg-info/requires.txt
+src/awakelab_solicitudes_v2.egg-info/top_level.txt
+tests/test_extract.py

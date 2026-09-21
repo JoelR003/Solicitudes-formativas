@@ -1,0 +1,186 @@
+{
+  "solicitud_id": "SOL-2026-0016",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Peluquería Imaginaria SL – AF-0017",
+    "sent_at": "Tue, 15 Sep 2026 23:33:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Peluquería Imaginaria SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0017",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Candela Moreno",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "candela.moreno6@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0016",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "15/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Peluquería Imaginaria SL",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "B53672382",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Candela Moreno Pérez",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "candela.moreno6@example.com",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 041",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 7,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "09/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0017",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Gestión del tiempo",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "88199791N",
+        "nombre": "Julia Castro Gómez",
+        "categoria": "Administrativo/a",
+        "horas": 40
+      },
+      {
+        "dni": "69218380H",
+        "nombre": "Izan Marín Gil",
+        "categoria": "Operario/a",
+        "horas": 30
+      },
+      {
+        "dni": "92587633Y",
+        "nombre": "Adrián Castro Rubio",
+        "categoria": "Responsable de equipo",
+        "horas": 40
+      },
+      {
+        "dni": "23073895L",
+        "nombre": "Enzo Garrido Serrano",
+        "categoria": "Auxiliar",
+        "horas": 60
+      },
+      {
+        "dni": "76131900Z",
+        "nombre": "Martina Domínguez Castro",
+        "categoria": "Responsable de equipo",
+        "horas": 30
+      },
+      {
+        "dni": "21643809G",
+        "nombre": "Marcos Gómez Ruiz",
+        "categoria": "Comercial",
+        "horas": 30
+      },
+      {
+        "dni": "51923924K",
+        "nombre": "Irene Álvarez Alonso",
+        "categoria": "Operario/a",
+        "horas": 30
+      }
+    ]
+  },
+  "validations": [],
+  "decision": {
+    "status": "approve",
+    "reasons": [
+      "La solicitud supera todas las comprobaciones."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0016 – aprobada",
+    "body": "Hola Candela Moreno Pérez,\n\nHemos aprobado la solicitud de Peluquería Imaginaria SL para AF-0017. La inscripción incluye 7 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "simulated",
+    "result": {
+      "ok": true,
+      "simulado": true,
+      "registro": {
+        "cif": "B53672382",
+        "accion": "AF-0017",
+        "trabajadores": [
+          "88199791N",
+          "69218380H",
+          "92587633Y",
+          "23073895L",
+          "76131900Z",
+          "21643809G",
+          "51923924K"
+        ],
+        "fecha": "2026-09-20",
+        "origen": "tramitacion_automatica"
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "solicitud_id": "SOL-2026-0013",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Imprenta Levante SL – AF-0026",
+    "sent_at": "Tue, 15 Sep 2026 15:14:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Imprenta Levante SL",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0026",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Manuel Fernández",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "manuel.fernandez30@example.com",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "scanned",
+    "file": "solicitud.pdf",
+    "fields": {}
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "73866912C",
+        "nombre": "Pablo Pérez Gutiérrez",
+        "categoria": "Comercial",
+        "horas": 40
+      },
+      {
+        "dni": "48499081Q",
+        "nombre": "Aitana Muñoz Martínez",
+        "categoria": "Responsable de equipo",
+        "horas": 40
+      },
+      {
+        "dni": "63623926S",
+        "nombre": "Daniel Garrido Sánchez",
+        "categoria": "Encargado/a",
+        "horas": 40
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "pdf_scanned",
+      "severity": "warning",
+      "message": "El PDF está escaneado y no se ha podido comparar."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF está escaneado y no se ha podido comparar."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0013 – en revisión",
+    "body": "Hola Manuel Fernández,\n\nHemos recibido la solicitud de Imprenta Levante SL para AF-0026. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF está escaneado y no se ha podido comparar.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

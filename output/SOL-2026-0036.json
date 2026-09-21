@@ -1,0 +1,174 @@
+{
+  "solicitud_id": "SOL-2026-0036",
+  "files": [
+    "listado_trabajadores.xlsx",
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Limpiezas Central S. Coop. – AF-0017",
+    "sent_at": "Mon, 14 Sep 2026 22:20:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Limpiezas Central S. Coop.",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0017",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Izan Castillo",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "izan.castillo48@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "text",
+    "file": "solicitud.pdf",
+    "fields": {
+      "solicitud_id": {
+        "value": "SOL-2026-0036",
+        "source": "pdf",
+        "location": "Nº de solicitud"
+      },
+      "fecha_solicitud": {
+        "value": "14/09/2026",
+        "source": "pdf",
+        "location": "Fecha de solicitud"
+      },
+      "empresa": {
+        "value": "Limpiezas Central S. Coop.",
+        "source": "pdf",
+        "location": "Razón social"
+      },
+      "cif": {
+        "value": "F88189378",
+        "source": "pdf",
+        "location": "CIF"
+      },
+      "contacto": {
+        "value": "Izan Castillo Moreno",
+        "source": "pdf",
+        "location": "Persona de contacto"
+      },
+      "email_contacto": {
+        "value": "izan.castillo48@example.net",
+        "source": "pdf",
+        "location": "Correo electrónico"
+      },
+      "telefono": {
+        "value": "600 000 047",
+        "source": "pdf",
+        "location": "Teléfono"
+      },
+      "modalidad": {
+        "value": "teleformación",
+        "source": "pdf",
+        "location": "Modalidad"
+      },
+      "trabajadores_declarados": {
+        "value": 7,
+        "source": "pdf",
+        "location": "Nº de trabajadores a inscribir"
+      },
+      "fecha_inicio": {
+        "value": "09/10/2026",
+        "source": "pdf",
+        "location": "Fecha de inicio prevista"
+      },
+      "accion": {
+        "value": "AF-0017",
+        "source": "pdf",
+        "location": "Acción formativa"
+      },
+      "curso": {
+        "value": "Gestión del tiempo",
+        "source": "pdf",
+        "location": "Acción formativa"
+      }
+    }
+  },
+  "worker_list": {
+    "status": "found",
+    "source": "excel",
+    "file": "listado_trabajadores.xlsx",
+    "workers": [
+      {
+        "dni": "32608007X",
+        "nombre": "Pablo Lozano Blanco",
+        "categoria": "Técnico/a",
+        "horas": 20
+      },
+      {
+        "dni": "32592606L",
+        "nombre": "Iker Lozano Rubio",
+        "categoria": "Auxiliar",
+        "horas": 60
+      },
+      {
+        "dni": "20929160B",
+        "nombre": "Pablo Ortiz Vázquez",
+        "categoria": "Comercial",
+        "horas": 60
+      },
+      {
+        "dni": "60573928R",
+        "nombre": "Emma Gómez Blanco",
+        "categoria": "Técnico/a",
+        "horas": 30
+      },
+      {
+        "dni": "89133151D",
+        "nombre": "Sofía Iglesias Álvarez",
+        "categoria": "Encargado/a",
+        "horas": 40
+      },
+      {
+        "dni": "91885507R",
+        "nombre": "Irene Moreno Fernández",
+        "categoria": "Técnico/a",
+        "horas": 40
+      },
+      {
+        "dni": "14377676P",
+        "nombre": "Alba Molina Suárez",
+        "categoria": "Responsable de equipo",
+        "horas": 40
+      }
+    ]
+  },
+  "validations": [
+    {
+      "code": "existing_enrollment",
+      "severity": "blocking",
+      "message": "La empresa ya tiene una inscripción en esta acción."
+    }
+  ],
+  "decision": {
+    "status": "deny",
+    "reasons": [
+      "La empresa ya tiene una inscripción en esta acción."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0036 – no aprobada",
+    "body": "Hola Izan Castillo Moreno,\n\nNo es posible tramitar la solicitud de Limpiezas Central S. Coop. para AF-0017 por los siguientes motivos:\n- La empresa ya tiene una inscripción en esta acción.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

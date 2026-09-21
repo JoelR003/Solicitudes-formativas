@@ -1,0 +1,74 @@
+{
+  "solicitud_id": "SOL-2026-0028",
+  "files": [
+    "mensaje.txt",
+    "solicitud.pdf"
+  ],
+  "email": {
+    "subject": "Solicitud inscripción – Limpiezas Simulada SLU – AF-0006",
+    "sent_at": "Tue, 15 Sep 2026 20:22:00 +0200",
+    "fields": {
+      "empresa": {
+        "value": "Limpiezas Simulada SLU",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "cif": null,
+      "accion": {
+        "value": "AF-0006",
+        "source": "email",
+        "location": "header: Asunto"
+      },
+      "contacto": {
+        "value": "Izan Garrido",
+        "source": "email",
+        "location": "header: De"
+      },
+      "email_contacto": {
+        "value": "izan.garrido78@example.net",
+        "source": "email",
+        "location": "header: De"
+      },
+      "trabajadores_declarados": null
+    }
+  },
+  "pdf": {
+    "status": "scanned",
+    "file": "solicitud.pdf",
+    "fields": {}
+  },
+  "worker_list": {
+    "status": "missing",
+    "source": null,
+    "file": null,
+    "workers": []
+  },
+  "validations": [
+    {
+      "code": "pdf_scanned",
+      "severity": "warning",
+      "message": "El PDF está escaneado y no se ha podido comparar."
+    },
+    {
+      "code": "worker_list_missing",
+      "severity": "blocking",
+      "message": "No se adjuntó un listado de trabajadores."
+    }
+  ],
+  "decision": {
+    "status": "human_review",
+    "reasons": [
+      "El PDF está escaneado y no se ha podido comparar."
+    ]
+  },
+  "response_draft": {
+    "subject": "Solicitud SOL-2026-0028 – en revisión",
+    "body": "Hola Izan Garrido,\n\nHemos recibido la solicitud de Limpiezas Simulada SLU para AF-0006. Hemos detectado una incidencia que requiere revisión manual:\n- El PDF está escaneado y no se ha podido comparar.\n\nNos pondremos en contacto cuando finalice la revisión.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "source": "template"
+  },
+  "registration": {
+    "mode": "simulation",
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
+  }
+}

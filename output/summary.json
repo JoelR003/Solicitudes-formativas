@@ -1,0 +1,106 @@
+{
+  "total_requests": 40,
+  "decisions": {
+    "human_review": 13,
+    "request_documents": 5,
+    "approve": 13,
+    "deny": 9
+  },
+  "validation_codes": {
+    "email_pdf_cif_mismatch": 2,
+    "pdf_worker_count_mismatch": 3,
+    "invalid_worker_dni": 3,
+    "pdf_scanned": 8,
+    "worker_list_missing": 4,
+    "company_not_registered": 3,
+    "insufficient_seats": 1,
+    "company_not_current": 2,
+    "action_not_found": 1,
+    "action_not_open": 1,
+    "existing_enrollment": 1
+  },
+  "registrations": {
+    "skipped": 27,
+    "simulated": 13
+  },
+  "needs_human_review": [
+    {
+      "solicitud_id": "SOL-2026-0001",
+      "reasons": [
+        "cif no coincide entre el correo y el PDF."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0002",
+      "reasons": [
+        "El PDF declara 7 trabajadores y el listado contiene 5."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0005",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0006",
+      "reasons": [
+        "El PDF declara 5 trabajadores y el listado contiene 3."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0013",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0014",
+      "reasons": [
+        "cif no coincide entre el correo y el PDF."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0020",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0021",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0025",
+      "reasons": [
+        "El PDF declara 3 trabajadores y el listado contiene 4."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0027",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0028",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0029",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    },
+    {
+      "solicitud_id": "SOL-2026-0034",
+      "reasons": [
+        "El PDF está escaneado y no se ha podido comparar."
+      ]
+    }
+  ]
+}
