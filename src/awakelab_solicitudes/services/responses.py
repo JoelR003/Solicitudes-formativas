@@ -81,9 +81,12 @@ class ResponseRefiner:
 
     def refine(self, request: dict, draft: dict) -> dict:
         prompt = (
-            "Rewrite this email draft in Spanish. Keep the decision and every factual reason exactly "
-            "as provided. Do not add facts, promises, dates, requirements, or policy. Return only a "
-            "JSON object with string keys subject and body.\n\n"
+            "Reescribe este correo en español con un tono claro, profesional y natural.\n"
+            "Conserva exactamente la decisión, la empresa, la acción, las cifras, las fechas, "
+            "los motivos y los requisitos. Puedes cambiar el saludo, el orden de las frases, "
+            "la estructura de los párrafos, el tono y el asunto. No inventes información, "
+            "no añadas promesas y no cambies el resultado de la solicitud.\n"
+            "Devuelve únicamente un objeto JSON con las claves string subject y body.\n\n"
             + json.dumps(
                 {"decision": request["decision"], "draft": draft},
                 ensure_ascii=False,

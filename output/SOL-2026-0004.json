@@ -132,35 +132,27 @@
       }
     ]
   },
-  "validations": [],
+  "validations": [
+    {
+      "code": "existing_enrollment",
+      "severity": "blocking",
+      "message": "La empresa ya tiene una inscripción en esta acción."
+    }
+  ],
   "decision": {
-    "status": "approve",
+    "status": "deny",
     "reasons": [
-      "La solicitud supera todas las comprobaciones."
+      "La empresa ya tiene una inscripción en esta acción."
     ]
   },
   "response_draft": {
-    "subject": "Solicitud SOL-2026-0004 – aprobada",
-    "body": "Hola Alba Alonso Navarro,\n\nHemos aprobado la solicitud de Clínica Atlántica SL para AF-0005. La inscripción incluye 3 trabajadores.\n\nUn saludo,\nEquipo de Gestión de la Formación",
+    "subject": "Solicitud SOL-2026-0004 – no aprobada",
+    "body": "Hola Alba Alonso Navarro,\n\nNo es posible tramitar la solicitud de Clínica Atlántica SL para AF-0005 por los siguientes motivos:\n- La empresa ya tiene una inscripción en esta acción.\n\nUn saludo,\nEquipo de Gestión de la Formación",
     "source": "template"
   },
   "registration": {
     "mode": "simulation",
-    "status": "simulated",
-    "result": {
-      "ok": true,
-      "simulado": true,
-      "registro": {
-        "cif": "B99193559",
-        "accion": "AF-0005",
-        "trabajadores": [
-          "61016307K",
-          "79496785E",
-          "90797488C"
-        ],
-        "fecha": "2026-09-20",
-        "origen": "tramitacion_automatica"
-      }
-    }
+    "status": "skipped",
+    "reason": "Only approved requests are registered."
   }
 }

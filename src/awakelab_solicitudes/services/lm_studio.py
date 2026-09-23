@@ -29,7 +29,7 @@ class LmStudioClient:
                 },
                 {"role": "user", "content": f"{prompt}\n\n/no_think"},
             ],
-            "temperature": 0.2,
+            "temperature": 0.5,
             "max_tokens": 200,
             "stream": True,
         }

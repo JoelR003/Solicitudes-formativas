@@ -16,6 +16,7 @@ from awakelab_solicitudes.services import (
     TrainingApiClient,
 )
 from awakelab_solicitudes.request_extractor import RequestExtractor
+from awakelab_solicitudes.web import render_page
 
 def test_parse_email_extracts_the_main_values() -> None:
     result = EmailExtractor().extract_text(
@@ -33,6 +34,28 @@ en la acción AF-0008. Queremos inscribir a 4 trabajadores.
     assert result["accion"]["value"] == "AF-0008"
     assert result["trabajadores_declarados"]["value"] == 4
     assert result["email_contacto"]["value"] == "ana@example.com"
+
+
+def test_web_page_renders_decision_and_escapes_content() -> None:
+    page = render_page(
+        "SOL-2026-0004",
+        {
+            "solicitud_id": "SOL-2026-0004",
+            "files": ["solicitud.pdf", "listado.xlsx"],
+            "pdf": {"file": "solicitud.pdf", "status": "text"},
+            "worker_list": {"file": "listado.xlsx", "workers": []},
+            "decision": {"status": "approve", "reasons": ["Todo correcto"]},
+            "validations": [],
+            "response_draft": {"body": "Hola <empresa>"},
+            "registration": {"status": "simulated", "mode": "simulation"},
+        },
+    )
+
+    assert "SOL-2026-0004" in page
+    assert "simulated" in page
+    assert "Hola &lt;empresa&gt;" in page
+    assert "/file?request_id=SOL-2026-0004&name=solicitud.pdf" in page
+    assert "Mejorar respuesta con LM Studio" in page
 
 
 def test_parse_email_extracts_people_declared_in_the_second_template() -> None:
@@ -91,6 +114,48 @@ Fecha de inicio prevista: 21/10/2026
     assert result["accion"]["value"] == "AF-0008"
     assert result["curso"]["value"] == "Liderazgo de equipos"
     assert result["trabajadores_declarados"]["value"] == 7
+
+
+def test_pdf_extractor_uses_ocr_for_a_scanned_pdf(monkeypatch, tmp_path: Path) -> None:
+    import awakelab_solicitudes.extractors.pdf as pdf_module
+
+    class EmptyReader:
+        pages = []
+
+    monkeypatch.setattr(pdf_module, "PdfReader", lambda path: EmptyReader())
+
+    class FakeOcr:
+        def extract(self, path: Path) -> str:
+            return """Razón social: Demo SL
+CIF: B12345678
+Acción formativa: AF-0008 · Liderazgo de equipos
+Nº de trabajadores a inscribir: 1
+"""
+
+    result = PdfExtractor(FakeOcr()).extract(tmp_path / "escaneado.pdf")
+
+    assert result["status"] == "ocr"
+    assert result["fields"]["cif"]["value"] == "B12345678"
+
+
+def test_pdf_extractor_keeps_human_review_when_ocr_fails(monkeypatch, tmp_path: Path) -> None:
+    import awakelab_solicitudes.extractors.pdf as pdf_module
+
+    class EmptyReader:
+        pages = []
+
+    monkeypatch.setattr(pdf_module, "PdfReader", lambda path: EmptyReader())
+
+    class BrokenOcr:
+        def extract(self, path: Path) -> str:
+            raise RuntimeError("Tesseract no disponible")
+
+    extractor = PdfExtractor(BrokenOcr())
+    result = extractor.extract(tmp_path / "escaneado.pdf")
+
+    assert result["status"] == "scanned"
+    assert result["fields"] == {}
+    assert result["ocr_error"] == "Tesseract no disponible"
 
 
 def test_worker_list_uses_the_five_columns_in_the_supplied_lists() -> None:
@@ -302,6 +367,8 @@ def test_response_refiner_uses_lm_studio_output_when_valid() -> None:
     class FakeClient:
         def rewrite(self, prompt: str) -> dict:
             assert "action_not_open" in prompt
+            assert "Puedes cambiar el saludo" in prompt
+            assert "No inventes información" in prompt
             return {"subject": "Solicitud no aprobada", "body": "Hola, la acción está cerrada."}
 
     request = {"decision": {"status": "deny", "reasons": ["La acción está cerrada."], "code": "action_not_open"}}

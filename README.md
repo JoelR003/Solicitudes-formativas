@@ -4,6 +4,12 @@ He preparado este prototipo para el caso práctico de solicitudes de inscripció
 
 La idea era dedicar el tiempo a un flujo pequeño, ejecutable y fácil de explicar. Por eso automatizo los casos claros y aparto los que tienen documentos incompletos, datos que no cuadran o requieren interpretación. No pretende ser un producto de producción ni procesar documentos distintos de los que venían en el ejercicio.
 
+## Antes de empezar
+
+Coloca la carpeta de este proyecto y la carpeta original del caso al mismo nivel. El proyecto debe poder encontrar `caso-solicitudes-documentales/solicitudes`, `datos` y `mock_api` mediante la ruta hermana `../caso-solicitudes-documentales/`. No copies esas carpetas dentro del proyecto.
+
+Desde la raíz del proyecto, instala el entorno con `uv sync`. Para usar la aplicación, arranca primero la API mock y después ejecuta el comando individual, el lote o la interfaz web. No hace falta iniciar LM Studio para las pruebas normales.
+
 ## Resultado con el lote entregado
 
 Procesé las 40 solicitudes contra la API mock usando el modo de simulación, de modo que no se crearon inscripciones durante esa prueba.
@@ -134,7 +140,7 @@ El parser está adaptado a los formatos del ejercicio:
 |---|---|---|
 | Correo `mensaje.txt` | Empresa, CIF si aparece, contacto, email, acción y participantes declarados | Lee los dos formatos de correo entregados. |
 | PDF legible | Empresa, CIF, contacto, email, teléfono, acción, curso, modalidad, participantes y fechas | Lee las etiquetas del formulario SIF-03. |
-| PDF escaneado | Estado `scanned` | Se deriva a revisión humana; no monté OCR. |
+| PDF escaneado | Intenta OCR local y marca el resultado como `ocr` | Si OCR no está disponible o no obtiene texto, se deriva a revisión humana. |
 | Excel | DNI, nombre, categoría y horas | Lee las cinco columnas de los 33 Excel. |
 | Word | DNI, nombre, categoría y horas | Lee la tabla de los tres Word. |
 
@@ -168,7 +174,7 @@ La salida siempre incluye una sección `registration`. Los casos que no se aprue
 
 ## Para qué usé LM Studio
 
-La decisión se toma antes de llamar al modelo. LM Studio recibe únicamente la decisión, sus motivos y el borrador de plantilla; solo tiene que devolver un asunto y un cuerpo más claros en español. El prompt le prohíbe inventar datos o cambiar la decisión.
+La decisión se toma antes de llamar al modelo. LM Studio recibe únicamente la decisión, sus motivos y el borrador de plantilla. Puede mejorar el saludo, el tono, el orden de las frases y el asunto, pero no puede cambiar los hechos ni la decisión.
 
 Por defecto uso una plantilla y el resultado aparece como `"source": "template"`. Para activar un modelo local, hay que arrancar el servidor de LM Studio y cargar un modelo de instrucciones:
 
@@ -190,7 +196,30 @@ uv run python -m awakelab_solicitudes.batch --lm-studio
 
 La conexión es local, mediante la API compatible con OpenAI de LM Studio en `http://127.0.0.1:1234/v1`. Si no está disponible, tarda demasiado o devuelve algo inválido, el programa conserva la plantilla y guarda el error en `refinement_error`. El procesamiento no queda bloqueado. La referencia de la API está en [LM Studio OpenAI compatibility](https://beta.lmstudio.ai/docs/developer/openai-compat).
 
+Para probar esta parte en local necesito Tesseract con el idioma español y Poppler, que `pdf2image` usa para convertir las páginas. Si alguna herramienta falta, el expediente no se rompe: conserva el estado `scanned` y queda para revisión humana. Los tests simulan el adaptador OCR, así que no dependen de esas instalaciones.
+
 ## Pruebas
+
+También preparé una interfaz local para probar los casos sin leer un JSON largo. Arráncala con la API mock levantada:
+
+```powershell
+uv run python -m awakelab_solicitudes.web
+```
+
+Después abre `http://127.0.0.1:8080`. Puedes elegir una solicitud, simularla, registrar una aprobada o pedir el refinamiento del borrador con LM Studio. La pantalla enseña la decisión, los motivos, las incidencias, el borrador, el resultado del registro y los adjuntos de esa solicitud. El PDF se puede previsualizar en el navegador y el Excel o Word se puede abrir o descargar desde su enlace.
+
+### Texto obtenido por OCR
+
+Para la demo dejé un comando que guarda en un `.txt` el texto reconocido del formulario escaneado `SOL-2026-0005`.
+Así se puede abrir el PDF original y enseñar al mismo tiempo qué texto ha recuperado el OCR.
+
+```powershell
+uv run python -m awakelab_solicitudes.ocr_demo_text SOL-2026-0005
+```
+
+El archivo queda en `output/ocr_demo/SOL-2026-0005_ocr.txt` y contiene el texto tal como lo devuelve Tesseract,
+incluidos sus pequeños errores normales de acentos. Si Tesseract no está disponible, usa la transcripción revisada
+del caso de demo para que la prueba siga siendo reproducible.
 
 Las pruebas no necesitan arrancar ni la API mock ni LM Studio:
 
@@ -199,6 +228,28 @@ uv run pytest tests
 ```
 
 Cubren la extracción de correo, PDF y listados; las validaciones; decisiones; borradores; fallback de LM Studio; y el resumen del lote.
+
+Antes de una demo ejecutaría esta comprobación:
+
+```powershell
+uv run pytest tests
+```
+
+Después arrancaría la API mock y probaría la interfaz web:
+
+```powershell
+uv run python -m awakelab_solicitudes.web
+```
+
+Abriría `http://127.0.0.1:8080` y comprobaría tres casos:
+
+| Caso | Qué comprobar |
+|---|---|
+| `SOL-2026-0004` | Aprobación, enlaces a PDF/Excel y simulación de registro. |
+| `SOL-2026-0018` | Bloqueo de negocio y registro `skipped`. |
+| `SOL-2026-0005` | PDF escaneado, documentación pendiente o revisión humana. |
+
+También probaría el botón `Mejorar respuesta con LM Studio` si el servidor local está encendido. Si no lo está, la interfaz debe conservar la plantilla y mostrar el error sin bloquear la solicitud.
 
 Para la comprobación manual usaría estos casos:
 
@@ -215,6 +266,7 @@ Para la comprobación manual usaría estos casos:
 |---|---|
 | `extractors/email.py` | Lee `mensaje.txt`. |
 | `extractors/pdf.py` | Lee el formulario PDF legible. |
+| `extractors/ocr.py` | Intenta OCR local con Tesseract para PDFs escaneados. |
 | `extractors/worker_list.py` | Lee el Excel o Word de trabajadores. |
 | `services/api.py` | Consulta y registra en la API mock. |
 | `services/validation.py` | Comprueba la coherencia de documentos. |
@@ -229,7 +281,7 @@ Para la comprobación manual usaría estos casos:
 
 El flujo funciona para las 40 solicitudes proporcionadas: lee 32 PDF con texto, 33 Excel y 3 Word; identifica 8 PDF escaneados y 4 listados ausentes; consulta la API mock; y deja una decisión y un borrador por caso.
 
-No añadí envío de correos, OCR ni compatibilidad con formatos nuevos. Son decisiones de alcance para no complicar un prototipo de unas horas. LM Studio es opcional y las pruebas usan clientes simulados, por lo que no dependen de GPU ni de un modelo cargado. La API mock usa datos ficticios; en producción separaría secretos, permisos y credenciales de servicio.
+No añadí el envío de correos ni compatibilidad con formatos nuevos. El OCR es una integración local y opcional: solo se ejecuta cuando el PDF no tiene texto. Si no consigue los campos mínimos, dejo el caso para revisión humana. LM Studio también es opcional y las pruebas usan clientes simulados, por lo que no dependen de una GPU ni de un modelo cargado. La API mock usa datos ficticios; en producción separaría secretos, permisos y credenciales de servicio.
 
 ## Antes de producción
 
@@ -257,11 +309,12 @@ Este prototipo lee archivos locales y los procesa uno a uno. Con una base de dat
 
 No monté esa infraestructura porque primero quería validar el flujo de negocio y las decisiones que habría que conservar al escalar.
 
-## Guion de demo de diez minutos
+## Guion de demo de cinco minutos
 
-1. Enseñar los tres documentos de una solicitud y explicar qué extrae cada parser.
-2. Ejecutar `SOL-2026-0004 --brief` como ejemplo de aprobación limpia.
-3. Ejecutar `SOL-2026-0005 --brief` para enseñar el tratamiento de un escaneado y un listado ausente.
-4. Abrir `output/summary.json` y comentar el resultado del lote.
-5. Explicar por qué la decisión es determinista y LM Studio solo interviene en el texto.
-6. Cerrar con los límites del prototipo y cómo lo plantearía en AWS.
+1. Enseñar la estructura de una solicitud y abrir la interfaz web.
+2. Ejecutar `SOL-2026-0004` y mostrar la aprobación, los adjuntos y la simulación.
+3. Ejecutar `SOL-2026-0018` y enseñar que el bloqueo evita el registro.
+4. Ejecutar `SOL-2026-0005` y mostrar cómo el escaneado queda para revisión.
+5. Abrir `output/summary.json` y explicar las cifras del lote completo.
+6. Enseñar el botón de LM Studio y explicar que solo mejora el texto.
+7. Cerrar con los límites actuales y la evolución hacia AWS.

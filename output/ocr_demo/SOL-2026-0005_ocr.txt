@@ -1,0 +1,32 @@
+SOLICITUD DE INSCRIPCION EN ACCION FORMATIVA BONIFICADA
+Grupo de Formacién Ficticio - Departamento de Gestion de la Formacién - Modelo SiF-03
+
+N° de solicitud: SOL-2026-0005
+
+Fecha de solicitud: 14/09/2026
+
+Razon social: Farmacia del Sur SL
+
+CIF: B50790963
+
+Persona de contacto: Candela Garcia Diaz
+
+Correo electrénico: candela.garcia13@example.com
+Teléfono: 600 000 011
+
+Accién formativa: AF-0013 - Comunicacién eficaz
+N° de trabajadores a inscribir: 3
+
+Fecha de inicio prevista: 09/11/2026
+
+Documentacidén que se adjunta a esta solicitud:
+[] Listado de trabajadores a inscribir (DNI, nombre, categoria, horas)
+[X] Declaracién responsable de estar al corriente de obligaciones tributarias y con la Seguridad Social
+[] Otros documentos
+
+La empresa deciara que los datos consignados son cierlos y autoriza al centro gestor a comprobar la informacién frente a los registros
+correspondientes. Este documento es un modelo ficticlo generado para un ejercicio; no tiene validez alguna.
+
+Firmado digitaimente por Candela Garcia Diaz el 14/09/2026 17:55
+
+SOL-2026-0005 - pagina 1 de 1

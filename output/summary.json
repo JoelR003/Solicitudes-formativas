@@ -3,25 +3,25 @@
   "decisions": {
     "human_review": 13,
     "request_documents": 5,
-    "approve": 13,
-    "deny": 9
+    "deny": 10,
+    "approve": 12
   },
   "validation_codes": {
     "email_pdf_cif_mismatch": 2,
     "pdf_worker_count_mismatch": 3,
     "invalid_worker_dni": 3,
+    "existing_enrollment": 2,
     "pdf_scanned": 8,
     "worker_list_missing": 4,
     "company_not_registered": 3,
     "insufficient_seats": 1,
     "company_not_current": 2,
     "action_not_found": 1,
-    "action_not_open": 1,
-    "existing_enrollment": 1
+    "action_not_open": 1
   },
   "registrations": {
-    "skipped": 27,
-    "simulated": 13
+    "skipped": 28,
+    "simulated": 12
   },
   "needs_human_review": [
     {

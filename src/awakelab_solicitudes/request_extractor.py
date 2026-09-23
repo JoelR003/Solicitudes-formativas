@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from .extractors import EmailExtractor, PdfExtractor, WorkerListExtractor
+from .extractors import EmailExtractor, PdfExtractor, TesseractOcr, WorkerListExtractor
 from .services import (
     BusinessValidator,
     DecisionService,
@@ -21,7 +21,7 @@ class RequestExtractor:
         simulate_registration: bool = True,
     ) -> None:
         self.email_extractor = EmailExtractor()
-        self.pdf_extractor = PdfExtractor()
+        self.pdf_extractor = PdfExtractor(TesseractOcr())
         self.worker_list_extractor = WorkerListExtractor()
         self.validator = RequestValidator()
         self.decision_service = DecisionService()
